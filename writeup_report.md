@@ -125,4 +125,19 @@ Here's a [link to my video result](./output_images/project_video.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-TODO: 
+The time it takes to process a frame is over 20ms, which means it's not realtime. The main problem is the undistort function. There are strategies to avoid full undistort and replace it with faster methods, especially since the impact on the end result is quite small. During development at some point I just disabled undistort so I can process videos faster. 
+
+Python type system is horrible, the errors are unhelpful when array shapes or tuples are involved.
+
+I am not taking into account multiple factors:
+1. Lane color is relatively constant once detected
+2. Lanes have expected geometry - either it's a continuous line, or equally spaced equal sized lines. Also, lane has an expected width, that I can use to filter out false positive pixels. 
+3. Lanes have a relatively constant distance between them.
+4. Lanes are in the same position on the road, so if I detect travel in relation to lane center, I can expect the lane lines to be shifted accordingly in the image. 
+
+Adaptive approach to shadows can:
+1. Divide the image into strips
+2. Try to adjust feature extraction thresholds for maximum detection in each strip, searately.
+3. Above adjustment can be made by trying different values and choosing the one with maximum detection, or using something like a histogram to detect road colors (common) vs lane colors (peak of rare color)
+4. The search area can be limited to around previous detections of lanes, this would eliminate false positives for bases, especially in the harder challenge video
+5. If lane pixel search doesn't find enough pixels, try another peak
