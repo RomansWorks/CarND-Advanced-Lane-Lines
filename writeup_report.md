@@ -38,7 +38,7 @@ It then produces a transformation matrix and some coefficiens which describe the
 
 In cell 4 I visualize the result by undistorting one of the calibration images. 
 
-![Example calibration result][output_images/calibration_result.png]
+![Example calibration result](output_images/calibration_result.png)
 
 ### Pipeline (single images)
 
@@ -48,7 +48,7 @@ I defined a function called 'undistort' which uses the previously computed coeff
 
 I visualize the result in cell 4:
 
-![Example calibration result][output_images/calibration_result.png]
+![Example calibration result](output_images/calibration_result.png)
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
@@ -66,7 +66,7 @@ The pixels found in all the above steps are then combined (OR logic, i.e. any ru
 
 I then visualize the results in the same cell on sample images:
 
-![Feature extraction][output_images/feature_extraction.png]
+![Feature extraction](output_images/feature_extraction.png)
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -76,7 +76,7 @@ I selected a trapeze that describes the area of interest in the road in the pers
 
 The next cell visualizes the selected trapeze and transform on two sample images:
 
-![Perspective Transform][output_images/perspective_transform.png]
+![Perspective Transform](output_images/perspective_transform.png)
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
@@ -86,7 +86,7 @@ Pixels found within the sliding windows are then used to fit a 2nd degree polyno
 
 I then plot the results:
 
-![Fitting a polynomial results][output_images/polynomial_fitting.png]
+![Fitting a polynomial results](output_images/polynomial_fitting.png)
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -97,7 +97,8 @@ Radius is then computed from the newly fitted polyline (in world (i.e. meter) sp
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 
-![Example of overlay][output_images/overlay_example.png]]
+![Example of overlay](output_images/overlay_example.png?raw=true)
+
 
 ---
 
@@ -105,7 +106,7 @@ Radius is then computed from the newly fitted polyline (in world (i.e. meter) sp
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./output_images/project_video_output.mp4)
+Here's a ![link to my video result](output_images/project_video_output.mp4)
 
 ---
 
